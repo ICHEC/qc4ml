@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["qrc4eo*"]
+
+[project]
+name = "qrc4eo"
+version = "0.0.1"
+description = "Quantum Reservoir Computing for Earth observation"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "pulser>=1.10.0",
+    "pandas"
+]
+
+[project.optional-dependencies]
+openeo = [
+    "openeo",
+    "rioxarray",
+    "rasterio",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel"
+]
